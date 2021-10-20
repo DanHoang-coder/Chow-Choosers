@@ -1,0 +1,59 @@
+/*   Dan Hoang
+     specials.css
+     10/15/2021
+*/
+ 
+/* Images container */
+.specials {
+    text-align:center;
+} 
+.specials ul {
+    list-style-type: none;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+.specials li {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+} 
+.specials img {
+    width: 100%;
+    height: auto; 
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.specials li h3 {
+    font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+.specials li p {
+    font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+
+/* Video container */
+.video-laptop {
+    margin: 0 auto;
+    position: relative;
+    width: 475px;
+    height: 400px;
+    text-align: center;
+}
+ 
+.video-laptop div {
+    box-sizing: border-box;
+    background: url(images/monitor1.jpg) center center no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 475px;
+    height: 400px;
+    padding: 22px;
+}
+
+@media only screen and (max-width: 768px) {
+    .video-laptop { display: none; }
+}

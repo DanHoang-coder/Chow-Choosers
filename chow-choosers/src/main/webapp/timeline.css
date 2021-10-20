@@ -1,0 +1,125 @@
+/*   Dan Hoang
+     timeline.css
+     10/21/2021
+*/
+
+/* The timeline container */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* The vertical ruler */
+.timeline::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -2px;
+    width: 5px;
+    background-color: #eeeedd;
+}
+
+/* The time period container */
+.time-period {
+    position: relative;
+    overflow: hidden;
+    margin: 50px 0;
+}
+
+/* The circles on the vertical ruler */
+.time-period::after {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    margin-left: -20px;
+    width: 32px;
+    height: 32px;
+    background: #cbcbb3 url("images/star.jpg") no-repeat center center;
+    border: 4px solid #ddddbb;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* The content */
+.content {
+    width: 48%;
+    width: calc(50% - 50px);
+    box-sizing: border-box;
+}
+.left {
+    float: left;
+    text-align: right;
+}
+.left img {
+    width: 100%;
+    height: auto;
+}
+.right {
+    float: right;
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid #d9d9d9;
+    border-radius: 10px;
+}
+.right::before {
+    content: " ";
+    position: absolute;
+    top: 24px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border: medium solid #d9d9d9;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #d9d9d9 transparent transparent;
+}
+
+@media only screen and (max-width: 768px) {
+    /* the vertical rule */
+    .timeline::after {
+        left: 9px;
+    }
+
+    .time-period { 
+        padding-left: 25px; 
+    }
+
+    /* the circles */
+    .time-period::after {
+        top: 24px;
+        left: 0;
+        margin-left: 0;
+        width: 10px;
+        height: 10px;
+        background: #b6b6b6;
+    }
+
+    .content {
+        display: block;
+        width: 100%;
+    }
+
+    .left::before {
+        content: " ";
+        position: absolute;
+        top: 24px;
+        left: 20px;
+        width: 0;
+        height: 0;
+        border: medium solid #d9d9d9;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #d9d9d9 transparent transparent;
+    }
+
+    .left .right {
+        float: left;
+        text-align: left;
+    }
+
+    .right { border: none; }
+    .right::before { display: none; }
+}

@@ -1,0 +1,258 @@
+/*   Dan Hoang
+     chowchoosers.css
+     10/15/2021
+*/
+
+header, nav, main, footer { display: block; }
+
+body { 
+    margin: 0;
+    background-color: #4E453B;
+    font-family: Verdana, Arial, sans-serif;
+    color: #000;
+}
+
+#wrapper { 
+    margin: 0 40px;
+    background-color: #F7F9F3;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 0 20px 5px #1d1a16;
+}
+
+header {
+    height: 80px; 
+    background: #F7F9F3 url("images/downtown.jpg") no-repeat right bottom;
+    box-shadow: 0 10px 15px -7px #63773c inset;
+    padding: 15px 10px;
+    display : flex;
+    align-items : center;
+}
+/* resize the logo automatically to fit the screen */
+header img {
+    max-width: 100%;
+    height: auto;
+    padding-top: 5px;
+}
+
+header h2 { display: none; }
+
+nav {
+    height: 48px;
+    background: linear-gradient(180deg, #666633, #444422);
+    background-color: #444422;
+    box-shadow: 0 5px 5px -2px #b0c388;
+}
+
+nav ul {
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav li {
+    display: inline;
+    float: left;
+    background: linear-gradient(180deg, #666633, #444422);
+    background-color: #444422;
+    border-right: 2px groove #666633; 
+}
+nav li:last-child { border-right: none; }
+
+/* current page indication */
+nav li.current {
+    position: relative;
+    background: linear-gradient(180deg, #55552b, #33331a);
+    background-color: #33331a
+}
+nav li.current::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 42%;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 12px solid #000;
+}
+
+nav a {
+    display: block;
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 16px;
+}
+nav a:link, a:visited {
+    color: #f6f6ee;
+    text-decoration: none;
+}
+nav a:hover {
+    background: linear-gradient(180deg, #55552b, #33331a);
+    background-color: #33331a;
+}
+nav a:active {
+    color: #f6f6ee;
+    text-decoration: none;
+}
+
+/* the home tab */
+nav a.home { 
+    padding: 8px 16px 4px 16px; 
+    background: linear-gradient(180deg, #535C00, #292E00);
+    background-color: #292E00;
+}
+nav a.home span {
+  display: none;
+}
+
+main { 
+    margin: 0; 
+    padding: 20px;
+}
+
+main ul { list-style-position: inside; }
+
+footer { 
+    border-top: 1px solid #bbb;
+    text-align: center;
+    font-size: 12px;
+    color: #000;
+    padding: 5px;
+}
+
+footer a {
+    font-size: 90%;
+    text-decoration: none; 
+}
+footer a.blue:link, a.blue:visited { color: #000066; }
+footer a.blue:hover, a.blue:hover { 
+    color: #0000cc;
+    text-decoration: underline; 
+}
+footer a.black:link, a.black:visited { color: #000; }
+footer a.black:hover, a.black:hover { 
+    color: #0000cc;
+    text-decoration: underline; 
+}
+
+footer ul { 
+    padding: 0;
+    list-style-type: none;
+}
+footer li { 
+    display: inline-block;
+    border-right: 1px solid #bbb; 
+}
+footer li:last-child { border-right: none; }
+footer li a { padding: 0 10px; }
+
+footer p { line-height: 10px; }
+
+/* heading lines */
+h1 { 
+    position: relative;
+    display: table;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 0 50px 20px 50px;
+    text-align: center;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: #997300; 
+    border-bottom: 2px solid #c3c388;
+}
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    margin-left: -25px;
+    width: 36px;
+    height: 36px;
+    background: #ddddbb url("images/h1.jpg") no-repeat center center;
+    border: 8px solid #F7F9F3;
+    border-radius: 50%;
+    z-index: 1;
+}
+h1 span {
+    display: block;
+    clear: left;
+    color: black;
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+h3 { color: #000033; }
+
+.focus-text { 
+    color: #666;
+    font-size: large;
+    text-align: center;
+}
+
+.pic-frame {
+    margin: 0 auto;
+}
+
+.pic-frame img {
+    width: 100%;
+    height: auto;
+}
+
+.pic-description { 
+    text-align: center; 
+    padding: 10px;
+}
+
+.clear { clear: both; }
+
+@media only screen and (max-width: 768px) {
+    #wrapper { 
+        margin: 0 auto;
+    }
+
+    header {
+        background: none;
+    }
+
+    nav {
+        height: auto;
+        overflow: hidden;
+    } 
+
+    /* change the navigation to display vertically*/
+    nav li {
+        display: block;
+        clear: left;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    nav a {
+        text-align: left;
+    }
+
+    /* hide the "down-arrow" indication on current-page tab */
+    nav li.current::before {
+        display: none;
+    }
+
+    nav a.home {
+        padding: 14px 16px;
+    }
+    /* hide the home icon on the home tab. Display text instead */
+    nav a.home img {
+        display: none;
+    }
+    nav a.home span {
+        display: block;
+    }
+
+    main { 
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.2em;
+        padding: 0 0 20px 0;
+    }
+}
