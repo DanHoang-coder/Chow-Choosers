@@ -1,5 +1,5 @@
 /*   Dan Hoang
-     chowchoosers.css
+     main.css
      10/15/2021
 */
 
@@ -19,15 +19,18 @@ body {
     box-shadow: 0 0 20px 5px #1d1a16;
 }
 
+
+/* ---------- HEADER -------------- */
+
 header {
-    height: 80px; 
+    height: 100px; 
     background: #F7F9F3 url("images/downtown.jpg") no-repeat right bottom;
     box-shadow: 0 10px 15px -7px #63773c inset;
-    padding: 15px 10px;
+    padding: 20px 10px 17px 10px;
     display : flex;
     align-items : center;
 }
-/* resize the logo automatically to fit the screen */
+
 header img {
     max-width: 100%;
     height: auto;
@@ -35,6 +38,8 @@ header img {
 }
 
 header h2 { display: none; }
+
+/* ---------- NAVIGATION -------------- */
 
 nav {
     height: 48px;
@@ -168,7 +173,7 @@ h1::after {
     margin-left: -25px;
     width: 36px;
     height: 36px;
-    background: #ddddbb url("images/h1.jpg") no-repeat center center;
+    background: #ddddbb url("../images/h1.jpg") no-repeat center center;
     border: 8px solid #F7F9F3;
     border-radius: 50%;
     z-index: 1;

@@ -1,10 +1,12 @@
+package jdbc;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 import javax.servlet.ServletContext;
 
 public class DBConnection {
-   static Connection connection = null;
+   private static Connection connection = null;
    static ServletContext servletContext;
 
    static void getDBConnection() {
@@ -15,16 +17,16 @@ public class DBConnection {
          return;
       }
 
-      connection = null;
+      setConnection(null);
       try {
          UtilProp.loadProperty(servletContext);
-         connection = DriverManager.getConnection(getURL(), getUserName(), getPassword());
+         setConnection(DriverManager.getConnection(getURL(), getUserName(), getPassword()));
       } catch (Exception e) {
          e.printStackTrace();
          return;
       }
 
-      if (connection != null) {
+      if (getConnection() != null) {
       } else {
          System.out.println("Failed to make connection!");
       }
@@ -48,5 +50,13 @@ public class DBConnection {
    public static void getDBConnection(ServletContext context) {
       servletContext = context;
       getDBConnection();
+   }
+   
+   public static Connection getConnection() {
+	   return connection;   
+   }
+   
+   public static void setConnection(Connection connection) {
+	   DBConnection.connection = connection;
    }
 }

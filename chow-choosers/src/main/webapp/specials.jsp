@@ -1,19 +1,23 @@
-﻿<!DOCTYPE html>
+<!-- Dan Hoang
+     specials.jsp
+     10/15/2021
+-->
+
+<jsp:include page="tabbarcontroller.jsp">
+    <jsp:param name="page" value="specials" />
+</jsp:include>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Chow Choosers: Specials</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="chowchoosers.css" media="screen">
-<link rel="stylesheet" type="text/css" href="chowchoosersprint.css" media="print">
-<link rel="stylesheet" type="text/css" href="specials.css" media="screen">
+<link rel="stylesheet" type="text/css" href="styles/main.css" media="screen">
+<link rel="stylesheet" type="text/css" href="styles/print.css" media="print">
+<link rel="stylesheet" type="text/css" href="styles/specials.css" media="screen">
 </head>
 <body>
-
-<!-- Dan Hoang
-     specials.html
-     10/15/2021
--->
 
 <div id="wrapper">
     <header>
@@ -21,10 +25,11 @@
     </header>
     <nav>
 	<ul>
-		<li><a href="chowchoosers.html" class="home"><img src="images/home.png" alt="Home"><span>Home</span></a></li>
-		<li><a href="history.html">Our History</a></li>
+		<li><a href="index.jsp" class="home"><img src="images/home.png" alt="Home"><span>Home</span></a></li>
+		<li><a href="history.jsp">Our History</a></li>
 		<li class="current"><a href="specials.html">Specials</a></li>
-		<li><a href="contact.html">Contact Us</a></li>
+		<li><a href="contact.jsp">Contact Us</a></li>
+		<%= request.getAttribute("navlist")%>
 	</ul>
     </nav>
     <main>
@@ -83,7 +88,7 @@
                     <source src="videos/downtown_diner.mp4" type="video/mp4">
                     <source src="videos/downtown_diner.ogv" type="video/ogv">
                     <!-- fallback to Flash: -->
-	            <object type="video/x-ms-wmv" data="videos/downtown_diner.wmv" width="320" height="240">
+                    <object type="video/x-ms-wmv" data="videos/downtown_diner.wmv" width="320" height="240">
 	                <embed type="video/x-ms-wmv" src="videos/downtown_diner.wmv" width="320" height="240" />
 	            </object>
                 </video>
@@ -94,9 +99,9 @@
     </main>
     <footer>
         <ul>
-            <li><a href="history.html" class="blue">History</a></li>
-            <li><a href="specials.html" class="blue">Specials</a></li>
-            <li><a href="contact.html" class="blue">Contact</a></li>
+            <li><a href="history.jsp" class="blue">History</a></li>
+            <li><a href="specials.jsp" class="blue">Specials</a></li>
+            <li><a href="contact.jsp" class="blue">Contact</a></li>
         </ul>
         <p>Copyright &copy; 2021 Chow Choosers</p>
         <p>Created by: <a href="mailto:dhoang2@mail.mccneb.edu" class="black">Dan Hoang</a></p>

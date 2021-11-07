@@ -1,6 +1,7 @@
+package jdbc;
+
 import java.util.Properties;
 import javax.servlet.ServletContext;
-import java.io.File;
 import java.io.InputStream;
 
 public class UtilProp {
