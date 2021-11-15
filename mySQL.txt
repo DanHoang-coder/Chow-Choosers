@@ -1,18 +1,50 @@
-CREATE TABLE users (
-    id INT NOT NULL AUTO_INCREMENT,
-    USERTYPE VARCHAR(30) DEFAULT 'NORMAL',
-    FIRSTNAME VARCHAR(30) NOT NULL,
-    LASTNAME VARCHAR(30) NOT NULL,
-    USERNAME VARCHAR(30) NOT NULL,
-    PASSWORD VARCHAR(30) NOT NULL,
-    EMAIL VARCHAR(30) NOT NULL,
-    PHONE VARCHAR(30) NOT NULL,
-    PRIMARY KEY (ID));
+CREATE TABLE Users (
+    UserID INT NOT NULL AUTO_INCREMENT,
+    UserType VARCHAR(30) DEFAULT 'NORMAL',
+    FirstName VARCHAR(30) NOT NULL,
+    LastName VARCHAR(30) NOT NULL,
+    UserName VARCHAR(30) NOT NULL,
+    PassWord VARCHAR(30) NOT NULL,
+    Email VARCHAR(30) NOT NULL,
+    Phone VARCHAR(30) NOT NULL,
+    Avatar VARCHAR(255) DEFAULT 'images/users/thumbnails/default.jpg',
+    PRIMARY KEY (UserID));
 
-INSERT INTO users (USERTYPE,FIRSTNAME,LASTNAME,USERNAME,PASSWORD,EMAIL,PHONE) VALUES ('ADMIN', 'Robin', 'Hood', 'user1', 'pass1', 'user1@gmail.com','402-111-1111');
+CREATE TABLE Restaurants (
+    RestaurantID INT NOT NULL AUTO_INCREMENT,
+    RestaurantType VARCHAR(30) NOT NULL,
+    RestaurantName VARCHAR(30) NOT NULL,
+    RestaurantDescription VARCHAR(255) NOT NULL,
+    StreetAddress VARCHAR(30) NOT NULL,
+    City VARCHAR(30) NOT NULL,
+    State VARCHAR(30) NOT NULL,
+    ZipCode INT NOT NULL,
+    Avatar VARCHAR(255) NOT NULL,
+    PRIMARY KEY (RestaurantID));
 
-INSERT INTO users (USERTYPE,FIRSTNAME,LASTNAME,USERNAME,PASSWORD,EMAIL,PHONE) VALUES ('NORMAL', 'Tom', 'Peterson', 'user2', 'pass2', 'user2@gmail.com','402-222-2222');
+CREATE TABLE Reviews (
+    ReviewID INT NOT NULL AUTO_INCREMENT,
+    ReviewDate DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    ReviewDescription VARCHAR(255) NOT NULL,
+    Rating INT NOT NULL DEFAULT 5,
+    UserID INT NOT NULL,
+    RestaurantID INT NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID) ON DELETE CASCADE,
+    FOREIGN KEY (RestaurantID) REFERENCES Restaurants(RestaurantID) ON DELETE CASCADE,
+    PRIMARY KEY (ReviewID));
 
-INSERT INTO users (USERTYPE,FIRSTNAME,LASTNAME,USERNAME,PASSWORD,EMAIL,PHONE) VALUES ('NORMAL', 'Taylor', 'Campbell', 'user3', 'pass3', 'user3@gmail.com','402-333-3333');
+INSERT INTO Users (UserType,FirstName,LastName,UserName,PassWord,Email,Phone,Avatar) VALUES ('ADMIN', 'Robin', 'Hood', 'user1', 'pass1', 'user1@gmail.com','402-111-1111', 'images/users/thumbnails/man01.jpg');
+INSERT INTO Users (UserType,FirstName,LastName,UserName,PassWord,Email,Phone,Avatar) VALUES ('NORMAL', 'Tom', 'Peterson', 'user2', 'pass2', 'user2@gmail.com','402-222-2222', 'images/users/thumbnails/man02.jpg');
+INSERT INTO Users (UserType,FirstName,LastName,UserName,PassWord,Email,Phone,Avatar) VALUES ('NORMAL', 'Salt', 'Bae', 'user3', 'pass3', 'user3@gmail.com','402-333-3333', 'images/users/thumbnails/man03.jpg');
+INSERT INTO Users (UserType,FirstName,LastName,UserName,PassWord,Email,Phone,Avatar) VALUES ('NORMAL', 'Melinda', 'Edwards', 'user4', 'pass4', 'user4@gmail.com','402-444-4444', 'images/users/thumbnails/man04.jpg');
 
-INSERT INTO users (USERTYPE,FIRSTNAME,LASTNAME,USERNAME,PASSWORD,EMAIL,PHONE) VALUES ('NORMAL', 'Melinda', 'Edwards', 'user4', 'pass4', 'user4@gmail.com','402-444-4444');
+INSERT INTO Restaurants (RestaurantType,RestaurantName,RestaurantDescription,StreetAddress,City,State,ZipCode,Avatar) VALUES ('Indian', 'India House Restaurant', 'Bringing authentic northern Indian cuisine to Omaha for nearly fifteen years.', '122 N Wells St', 'Omaha', 'NE', 68010, 'images/restaurants/thumbnails/restaurant01.jpg');
+INSERT INTO Restaurants (RestaurantType,RestaurantName,RestaurantDescription,StreetAddress,City,State,ZipCode,Avatar) VALUES ('Chinese', 'MingHin Cuisine', 'The best and biggest Dim sum restaurant in Omaha or the Midwest, specializes in traditional and contemporary Cantonese and dim sum (deem sum) located in Omaha.', '1414 N Milwaukee Ave', 'Omaha', 'NE', 68116, 'images/restaurants/thumbnails/restaurant02.jpg');
+
+INSERT INTO Reviews (ReviewDate,ReviewDescription,Rating,UserID,RestaurantID) VALUES ('2021-10-31 23:59:59', 'Up-and-mostly down meal for three, where each of us had just one cocktail and one glass of bad wine each.', 3, 1, 1);
+INSERT INTO Reviews (ReviewDate,ReviewDescription,Rating,UserID,RestaurantID) VALUES ('2021-11-12 03:39:50', 'Although other meat was luscious. We want more substance with the smoke and salt.', 4, 3, 1);
+INSERT INTO Reviews (ReviewDate,ReviewDescription,Rating,UserID,RestaurantID) VALUES ('2021-09-01 08:10:24', 'I usually prefer steak that gives me something to chew on, but I was glad to be introduced to lokum.', 5, 2, 1);
+
+INSERT INTO Reviews (ReviewDate,ReviewDescription,Rating,UserID,RestaurantID) VALUES ('2021-09-07 12:25:32', 'The steak is mundane, somewhat tough and rather bland. The hamburger is overcooked. The tartare is over-chopped. The cocktails are terrible and the water — which we ended up buying — is $9 and does little to quench our thirst.', 2, 4, 2);
+INSERT INTO Reviews (ReviewDate,ReviewDescription,Rating,UserID,RestaurantID) VALUES ('2021-07-12 11:12:42', 'A truly exquisite MingHin Cuisine dining experience. I highly recommend the Hot Mustard Sauce, out of this world.', 4, 2, 2);
+INSERT INTO Reviews (ReviewDate,ReviewDescription,Rating,UserID,RestaurantID) VALUES ('2020-01-02 03:29:55', 'Dim Sum is great for when you want vaguely Chinese flavored food-like items to shove down your throat. Sober me rates this Dim Sum: 4 stars. Drunk me rates it : 6.9 stars. Add the hot sauce and you get 5 stars', 5, 3, 2);
