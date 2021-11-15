@@ -24,7 +24,7 @@ public class UserLoginServlet extends HttpServlet {
             DBConnection.getDBConnection(getServletContext());
             connection = DBConnection.getConnection();
             
-            String selectSQL = "SELECT * FROM users WHERE USERNAME = ? and PASSWORD = ?";
+            String selectSQL = "SELECT * FROM Users WHERE UserName = ? and PassWord = ?";
 
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, username);
@@ -33,13 +33,13 @@ public class UserLoginServlet extends HttpServlet {
 
             if (rs.next()) {
                 user = new User();
-                user.setType(rs.getString("USERTYPE"));
-                user.setUsername(rs.getString("USERNAME"));
-                user.setPassword(rs.getString("PASSWORD"));
-                user.setFirstname(rs.getString("FIRSTNAME"));
-                user.setLastname(rs.getString("LASTNAME"));
-                user.setEmail(rs.getString("EMAIL"));
-                user.setPhone(rs.getString("PHONE"));
+                user.setType(rs.getString("UserType"));
+                user.setUsername(rs.getString("UserName"));
+                user.setPassword(rs.getString("PassWord"));
+                user.setFirstname(rs.getString("FirstName"));
+                user.setLastname(rs.getString("LastName"));
+                user.setEmail(rs.getString("Email"));
+                user.setPhone(rs.getString("Phone"));
             }
 
             rs.close();

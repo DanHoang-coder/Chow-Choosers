@@ -34,7 +34,7 @@ public class AdminServlet extends HttpServlet {
     	            DBConnection.getDBConnection(getServletContext());
     	            connection = DBConnection.getConnection();
     	            
-    	            String selectSQL = "SELECT * FROM users";
+    	            String selectSQL = "SELECT * FROM Users";
 
     	            preparedStatement = connection.prepareStatement(selectSQL);
     	            ResultSet rs = preparedStatement.executeQuery();
@@ -42,13 +42,13 @@ public class AdminServlet extends HttpServlet {
     	            List<User> users = new ArrayList<User>();
     	            while(rs.next()) {
     	                user = new User();
-    	                user.setType(rs.getString("USERTYPE"));
-    	                user.setUsername(rs.getString("USERNAME"));
-    	                user.setPassword(rs.getString("PASSWORD"));
-    	                user.setFirstname(rs.getString("FIRSTNAME"));
-    	                user.setLastname(rs.getString("LASTNAME"));
-    	                user.setEmail(rs.getString("EMAIL"));
-    	                user.setPhone(rs.getString("PHONE"));
+    	                user.setType(rs.getString("UserType"));
+    	                user.setUsername(rs.getString("UserName"));
+    	                user.setPassword(rs.getString("PassWord"));
+    	                user.setFirstname(rs.getString("FirstName"));
+    	                user.setLastname(rs.getString("LastName"));
+    	                user.setEmail(rs.getString("Email"));
+    	                user.setPhone(rs.getString("Phone"));
     	                users.add(user);
     	            }
     	            
@@ -87,7 +87,7 @@ public class AdminServlet extends HttpServlet {
             DBConnection.getDBConnection(getServletContext());
             connection = DBConnection.getConnection();
             
-            String deleteSQL = "DELETE FROM users WHERE USERNAME = ? and USERTYPE = 'NORMAL'";
+            String deleteSQL = "DELETE FROM Users WHERE UserName = ? and UserType = 'NORMAL'";
 
             preparedStatement = connection.prepareStatement(deleteSQL);
             preparedStatement.setString(1, username);

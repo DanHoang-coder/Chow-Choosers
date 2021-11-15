@@ -32,7 +32,7 @@ public class RegistrationServlet extends HttpServlet {
             DBConnection.getDBConnection(getServletContext());
             connection = DBConnection.getConnection();
             
-            String selectSql = "SELECT username FROM users WHERE username = ?";
+            String selectSql = "SELECT username FROM Users WHERE UserName = ?";
             preparedStatement1 = connection.prepareStatement(selectSql);          
             preparedStatement1.setString(1, username);            
             rs = preparedStatement1.executeQuery();            
@@ -46,7 +46,7 @@ public class RegistrationServlet extends HttpServlet {
                 RequestDispatcher dispatcher = request.getRequestDispatcher("registration.jsp");
                 dispatcher.forward(request, response);           
             } else {
-                String insertSql = "INSERT INTO users (id, USERTYPE, FIRSTNAME, LASTNAME, USERNAME, PASSWORD, EMAIL, PHONE) values (default, default, ?, ?, ?, ?, ?, ?)";
+                String insertSql = "INSERT INTO Users (UserID, UserType, FirstName, LastName, UserName, PassWord, Email, Phone) values (default, default, ?, ?, ?, ?, ?, ?)";
 
                 preparedStatement2 = connection.prepareStatement(insertSql);
                 preparedStatement2.setString(1, firstname);

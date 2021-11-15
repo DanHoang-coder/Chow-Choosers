@@ -1,0 +1,157 @@
+.main-section {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.reviewee {
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding-top: 10px;
+}
+.reviewee-thumbnail {
+    width: 30%;
+    float: left;
+    text-align: center;
+}
+.reviewee-thumbnail img {
+    height: 120px;
+    width: 120px;
+    border: 1px solid #afa73d;
+    border-radius: 5%;
+}
+.reviewee-information {
+    float:left;
+}
+.reviewee-information h2, .reviewee-information p {
+    margin: 0px 0px 5px 0px;
+}
+.reviewee-information h2 {
+    font-size: 26px;
+}
+.reviewee-information p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #9d9f9e;
+}
+
+.average-rating {
+    display: inline-block;
+    text-align: center;
+    width: 18%;
+}
+.average-rating h2 {
+    margin: 0px;
+    font-size: 60px;
+}
+.average-rating p {
+    margin: 0px;
+    font-size: 20px;
+}
+
+.fa-star, .fa-star-o, .fa-star-half-o {
+    color: #FDC91B;
+    font-size: 25px !important;
+}
+
+.bar-chart {
+    float: right;
+    width: 32%;
+}
+
+.rating-table {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.rating-label {
+    text-align: center;
+    color: #337AB7;
+    font-size: 18px;
+}
+.rating-bar {
+    width: 200px;
+    padding: 0;
+}
+.progress-1, .progress-2, .progress-3, .progress-4, .progress-5 {
+    background: #F5F5F5;
+    border-radius: 13px;
+    height: 18px;
+    width: 97%;
+    padding: 0px;
+    margin: 5px 0px 3px 0px;
+}
+.progress-1:after, .progress-2:after, .progress-3:after, .progress-4:after, .progress-5:after {
+    content: '';
+    display: block;
+    background: #337AB7;
+    width: 80%;
+    height: 100%;
+    border-radius: 9px;
+}
+
+.reviews  {
+  margin-top: 15px;
+  border-top: 1px dashed #eeecce;
+}
+.reviews h3 {
+    margin: 10px 0px 20px 30px;
+    font-size: 30px;
+}
+
+.review  {
+  margin-bottom: 15px;
+}
+.reviewer {
+    width: 30%;
+    float: left;
+}
+.reviewer-thumbnail {
+    width: 48%;
+    float: left;
+    text-align: center;
+}
+.reviewer-thumbnail img {
+    height: 80px;
+    width: 80px;
+    border: 1px solid #afa73d;
+    border-radius: 50%;
+}
+.reviewer-information {
+    float: left;
+}
+.reviewer-information h4, .reviewer-information p {
+    margin: 0px 0px 5px 0px;
+}
+.reviewer-information p {
+    font-size: 20px;
+    font-weight: bold;
+}
+.reviewer-information h4, .reviewer-information span {
+    color: #9d9f9e;
+}
+.reviewer-comment {
+    width: 68%;
+    float: right;
+}
+
+@media only screen and (max-width: 1100px) {
+    .reviewee {
+        display: inline-block;
+        width: 100%;
+    }
+    .average-rating {
+        float: left;
+        width: 40%;
+    }
+    .bar-chart {
+        float: right;
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .reviewee, .average-rating, .bar-chart, .reviewee-thumbnail, .reviewee-information {
+        display: inline-block;
+        width: 100%;
+    }
+}

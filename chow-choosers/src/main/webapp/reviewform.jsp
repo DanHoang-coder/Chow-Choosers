@@ -15,7 +15,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="styles/main.css" media="screen">
 <link rel="stylesheet" type="text/css" href="styles/print.css" media="print">
-<link rel="stylesheet" type="text/css" href="styles/rating.css" media="screen">
+<link rel="stylesheet" type="text/css" href="styles/review-form.css" media="screen">
 </head>
 <body>
 
@@ -35,9 +35,14 @@
 
     <main>
         <h1><span>Write a Review</span></h1>
-        <p class="focus-text">Help the community decide.</p>
   
         <div class="my-form">
+            <div class="reviewee-information">
+                <h2>India House Restaurant</h2>
+                <p>122 N Wells St</p>
+                <p>Omaha, NE 68116</p>
+            </div>
+
             <form action="" method="post">
                 <ul>
                     <li>  
