@@ -18,6 +18,13 @@ int twoStarPercent = restaurant.getNumTwoStar() * 100 / restaurant.getNumStars()
 int threeStarPercent = restaurant.getNumThreeStar() * 100 / restaurant.getNumStars();
 int fourStarPercent =  restaurant.getNumFourStar() * 100 / restaurant.getNumStars();
 int fiveStarPercent = restaurant.getNumFiveStar() * 100 / restaurant.getNumStars();
+
+// Creating the review button
+String reviewButton = "<a href=\"WriteReview?restaurantID=" + restaurant.getRestaurantID() 
++ "\"><button class=\"button\">Write a review <i class=\"fa fa-pencil\"></i></button></a>";
+if (session == null || session.getAttribute("user") == null) {
+    reviewButton = "<button class=\"button disabled\">Write a review <i class=\"fa fa-pencil\"></i></button></a>";
+}
 %>
 
 <jsp:include page="tabbarcontroller.jsp">
@@ -79,6 +86,7 @@ int fiveStarPercent = restaurant.getNumFiveStar() * 100 / restaurant.getNumStars
                     <h2><%=restaurant.getRestaurantName()%></h2>
                     <p><%=restaurant.getStreetAddress()%></p>
                     <p><%=restaurant.getCity()%>, <%=restaurant.getState()%> <%=restaurant.getZipCode()%></p>
+                    <%=reviewButton%>
                 </div>
             </div>
 

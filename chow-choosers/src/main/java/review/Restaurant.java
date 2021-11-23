@@ -1,6 +1,7 @@
 package review;
 
 public class Restaurant {
+	private int restaurantID;
     private String restaurantType;
     private String restaurantName;
     private String restaurantDescription;
@@ -11,6 +12,12 @@ public class Restaurant {
     private String avatar;
     private int numOneStar, numTwoStar, numThreeStar, numFourStar, numFiveStar;
 
+    public int getRestaurantID() {
+        return restaurantID;
+    }
+    public void setRestaurantID(int restaurantID) {
+        this.restaurantID = restaurantID;
+    }
     public String getRestaurantType() {
         return restaurantType;
     }

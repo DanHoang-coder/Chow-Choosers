@@ -14,8 +14,8 @@
     text-align: center;
 }
 .reviewee-thumbnail img {
-    height: 120px;
-    width: 120px;
+    height: 130px;
+    width: 130px;
     border: 1px solid #afa73d;
     border-radius: 5%;
 }
@@ -32,6 +32,24 @@
     font-size: 18px;
     font-weight: bold;
     color: #9d9f9e;
+}
+
+.button {
+    background-color: #e4ecdd;
+    border: 1px solid #c8d8b6;
+    color:  #014db1;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .average-rating {

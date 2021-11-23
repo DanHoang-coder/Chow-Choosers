@@ -33,6 +33,7 @@ public class UserLoginServlet extends HttpServlet {
 
             if (rs.next()) {
                 user = new User();
+                user.setUserID(rs.getInt("UserID"));
                 user.setType(rs.getString("UserType"));
                 user.setUsername(rs.getString("UserName"));
                 user.setPassword(rs.getString("PassWord"));

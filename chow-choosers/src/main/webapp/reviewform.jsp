@@ -3,6 +3,12 @@
      10/15/2021
 -->
 
+<%@ page import="review.Restaurant" %>
+
+<%
+Restaurant restaurant = (Restaurant) request.getAttribute("restaurant");
+%>
+
 <jsp:include page="tabbarcontroller.jsp">
     <jsp:param name="page" value="reviewform" />
 </jsp:include>
@@ -38,28 +44,29 @@
   
         <div class="my-form">
             <div class="reviewee-information">
-                <h2>India House Restaurant</h2>
-                <p>122 N Wells St</p>
-                <p>Omaha, NE 68116</p>
+                <h2><%=restaurant.getRestaurantName()%></h2>
+                <p><%=restaurant.getStreetAddress()%></p>
+                <p><%=restaurant.getCity()%>, <%=restaurant.getState()%> <%=restaurant.getZipCode()%></p>
             </div>
 
-            <form action="" method="post">
+            <form action="WriteReview" method="post">
+                <input type="hidden" name="restaurantID" value="<%=request.getParameter("restaurantID")%>">
                 <ul>
                     <li>  
                         <fieldset>
                             <legend><span class="number">1</span> Rating</legend>
                             <div class="star-plugin">
                                 <div class="css3-rating-stars">
-                                    <input type="radio" name="star-rating-1" id="star-rating-1-0" value="5" />
-                                    <label for="star-rating-1-0"></label>
-                                    <input type="radio" name="star-rating-1" id="star-rating-1-1" value="4" />
-                                    <label for="star-rating-1-1"></label>
-                                    <input type="radio" name="star-rating-1" id="star-rating-1-2" value="3" />
-                                    <label for="star-rating-1-2"></label>
-                                    <input type="radio" name="star-rating-1" id="star-rating-1-3" value="2" />
-                                    <label for="star-rating-1-3"></label>
-                                    <input type="radio" name="star-rating-1" id="star-rating-1-4"  value="1" />
-                                    <label for="star-rating-1-4"></label>
+                                    <input type="radio" name="rating" id="rating-5" value="5" />                                    
+                                    <label for="rating-5"></label>                                    
+                                    <input type="radio" name="rating" id="rating-4" value="4" />                                    
+                                    <label for="rating-4"></label>                                    
+                                    <input type="radio" name="rating" id="rating-3" value="3" />
+                                    <label for="rating-3"></label>
+                                    <input type="radio" name="rating" id="rating-2" value="2" />
+                                    <label for="rating-2"></label>
+                                    <input type="radio" name="rating" id="rating-1"  value="1" />
+                                    <label for="rating-1"></label>
                                 </div>
                             </div> 
                         </fieldset>
@@ -67,7 +74,7 @@
                     <li>
                         <fieldset>
                             <legend><span class="number">2</span> Your Review</legend>
-                            <textarea name="message" rows="7" cols="56" placeholder="Message *"></textarea>
+                            <textarea name="reviewDescription" rows="7" cols="56" placeholder="Comment *"></textarea>
                         </fieldset>
                     </li> 
                     <li>

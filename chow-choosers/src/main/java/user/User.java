@@ -1,6 +1,7 @@
 package user;
 
 public class User {
+	private int userID;
     private String firstname;
     private String lastname;
     private String email;
@@ -9,6 +10,18 @@ public class User {
     private String username;
     private String password;
 
+    public int getUserID() {
+        return userID;
+    }
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+    public String getType() {
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
+    }
     public String getFirstname() {
         return firstname;
     }
@@ -32,12 +45,6 @@ public class User {
     }
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-    public String getType() {
-        return type;
-    }
-    public void setType(String type) {
-        this.type = type;
     }
     public String getUsername() {
         return username;

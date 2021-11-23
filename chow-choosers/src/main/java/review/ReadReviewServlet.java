@@ -14,10 +14,10 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 
 @WebServlet("/review")
-public class ReviewServlet extends HttpServlet {
+public class ReadReviewServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    public ReviewServlet() {
+    public ReadReviewServlet() {
         super();
     }
 
@@ -40,6 +40,7 @@ public class ReviewServlet extends HttpServlet {
     	    ResultSet rs1 = psRestaurant.executeQuery();
             if (rs1.next()) {
                 restaurant = new Restaurant();
+                restaurant.setRestaurantID(restaurantID);
                 restaurant.setRestaurantType(rs1.getString("RestaurantType"));
                 restaurant.setRestaurantName(rs1.getString("RestaurantName"));
                 restaurant.setRestaurantDescription(rs1.getString("RestaurantDescription"));
@@ -103,17 +104,17 @@ public class ReviewServlet extends HttpServlet {
                 restaurant.setNumFiveStar(numFiveStar);
             }
 
-            request.setAttribute("restaurant", restaurant);
-    	    request.setAttribute("reviews", reviews);
-    	    RequestDispatcher dispatcher = request.getRequestDispatcher("review.jsp");
-    	    dispatcher.forward(request, response);
-
             rs1.close();
             rs2.close();
             psRestaurant.close();
             psReview.close();
             psUser.close();
-            connection.close();
+            connection.close();            
+            
+            request.setAttribute("restaurant", restaurant);
+    	    request.setAttribute("reviews", reviews);
+    	    RequestDispatcher dispatcher = request.getRequestDispatcher("review.jsp");
+    	    dispatcher.forward(request, response);
         } catch (SQLException se) {
             se.printStackTrace();	
     	} catch (Exception e) {
@@ -139,6 +140,5 @@ public class ReviewServlet extends HttpServlet {
     }
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }
