@@ -41,7 +41,7 @@
                 <input type="hidden" name="recipient" value="danhoang@unomaha.edu">
                 <input type="hidden" name="subject" value="INFO1311 Final Assignment">
                 <input type="hidden" name="required" value="firstname,lastname,email,message">
-                <input type="hidden" name="redirect" value="http://student.mccinfo.net/~dhoang2/module9/return.html">
+                <input type="hidden" name="redirect" value="http://ec2-18-219-122-60.us-east-2.compute.amazonaws.com:8080/chow-choosers/return.html">
                 <input type="hidden" name="return_link_title" value="The Downtown Diner">
                 <input type="hidden" name="bgcolor" value="#FFFF99">
                 <input type="hidden" name="title" value="Thank you for taking the time to complete the form.">
