@@ -1,3 +1,9 @@
+
+DROP TABLE Reviews;
+DROP TABLE Restaurants;
+DROP TABLE Users;
+
+
 CREATE TABLE Users (
     UserID INT NOT NULL AUTO_INCREMENT,
     UserType VARCHAR(30) DEFAULT 'NORMAL',
@@ -20,6 +26,7 @@ CREATE TABLE Restaurants (
     State VARCHAR(30) NOT NULL,
     ZipCode INT NOT NULL,
     Avatar VARCHAR(255) NOT NULL,
+    Tags VARCHAR(510) NOT NULL,
     PRIMARY KEY (RestaurantID));
 
 CREATE TABLE Reviews (
@@ -38,8 +45,11 @@ INSERT INTO Users (UserType,FirstName,LastName,UserName,PassWord,Email,Phone,Ava
 INSERT INTO Users (UserType,FirstName,LastName,UserName,PassWord,Email,Phone,Avatar) VALUES ('NORMAL', 'Salt', 'Bae', 'user3', 'pass3', 'user3@gmail.com','402-333-3333', 'images/users/thumbnails/man03.jpg');
 INSERT INTO Users (UserType,FirstName,LastName,UserName,PassWord,Email,Phone,Avatar) VALUES ('NORMAL', 'Melinda', 'Edwards', 'user4', 'pass4', 'user4@gmail.com','402-444-4444', 'images/users/thumbnails/man04.jpg');
 
-INSERT INTO Restaurants (RestaurantType,RestaurantName,RestaurantDescription,StreetAddress,City,State,ZipCode,Avatar) VALUES ('Indian', 'India House Restaurant', 'Bringing authentic northern Indian cuisine to Omaha for nearly fifteen years.', '122 N Wells St', 'Omaha', 'NE', 68010, 'images/restaurants/thumbnails/restaurant01.jpg');
-INSERT INTO Restaurants (RestaurantType,RestaurantName,RestaurantDescription,StreetAddress,City,State,ZipCode,Avatar) VALUES ('Chinese', 'MingHin Cuisine', 'The best and biggest Dim sum restaurant in Omaha or the Midwest, specializes in traditional and contemporary Cantonese and dim sum (deem sum) located in Omaha.', '1414 N Milwaukee Ave', 'Omaha', 'NE', 68116, 'images/restaurants/thumbnails/restaurant02.jpg');
+INSERT INTO Restaurants (RestaurantType,RestaurantName,RestaurantDescription,StreetAddress,City,State,ZipCode,Avatar,Tags) VALUES ('Indian', 'India House Restaurant', 'Bringing authentic northern Indian cuisine to Omaha for nearly fifteen years.', '122 N Wells St', 'Omaha', 'NE', 68010, 'images/restaurants/thumbnails/restaurant01.jpg', 'India House Restaurant, Indian cuisines, Indian foods, Indian restaurants near me, Indian restaurants in town, Indian restaurants in Omaha, authentic northern Indian cuisine, best restaurants, indian restaurants omaha');
+INSERT INTO Restaurants (RestaurantType,RestaurantName,RestaurantDescription,StreetAddress,City,State,ZipCode,Avatar,Tags) VALUES ('Chinese', 'MingHin Cuisine', 'The best and biggest Dim sum restaurant in Omaha or the Midwest, specializes in traditional and contemporary Cantonese and dim sum (deem sum) located in Omaha.', '1414 N Milwaukee Ave', 'Omaha', 'NE', 68116, 'images/restaurants/thumbnails/restaurant02.jpg', 'MingHin Cuisines, Chinese cuisines, Chinese foods, Chinese restaurants near me, Chinese restaurants in town, Chinese restaurants in Omaha, best dim sum restaurant in Omaha, traditional contemporary Catonese dim sum, best restaurants, chinese restaurants omaha');
+INSERT INTO Restaurants (RestaurantType,RestaurantName,RestaurantDescription,StreetAddress,City,State,ZipCode,Avatar,Tags) VALUES ('Italian', 'Carrabba''s Italian Grill', 'Chain eatery & bar serving a diverse menu of classic Italian fare in a family-friendly setting.', '14520 W Maple Rd', 'Omaha', 'NE', 68116, 'images/restaurants/thumbnails/restaurant03.jpg', 'Carrabba''s Italian Grill, Carrabba Italian Grill, Italian cuisines, Italian foods, Italian restaurants near me, Italian restaurants in town, Italian restaurants in Omaha, chain eatery, classic Italian fare, Italian grill, Italian restaurants Omaha');
+INSERT INTO Restaurants (RestaurantType,RestaurantName,RestaurantDescription,StreetAddress,City,State,ZipCode,Avatar,Tags) VALUES ('Chinese', 'Dragon Wok', 'Local Chinese standby with a full bar offering patrons classic eat-in or carry-out cuisine.', '14220 Fort St', 'Omaha', 'NE', 68164, 'images/restaurants/thumbnails/restaurant04.jpg', 'Dragon Wok Restaurant, Chinese cuisines, Chinese foods, Chinese restaurants near me, Chinese restaurants in town, Chinese restaurants in Omaha, local Chinese restaurants, China buffets, Chinese restaurants Omaha');
+
 
 INSERT INTO Reviews (ReviewDate,ReviewDescription,Rating,UserID,RestaurantID) VALUES ('2021-10-31 23:59:59', 'Up-and-mostly down meal for three, where each of us had just one cocktail and one glass of bad wine each.', 3, 1, 1);
 INSERT INTO Reviews (ReviewDate,ReviewDescription,Rating,UserID,RestaurantID) VALUES ('2021-11-12 03:39:50', 'Although other meat was luscious. We want more substance with the smoke and salt.', 4, 3, 1);
@@ -48,3 +58,7 @@ INSERT INTO Reviews (ReviewDate,ReviewDescription,Rating,UserID,RestaurantID) VA
 INSERT INTO Reviews (ReviewDate,ReviewDescription,Rating,UserID,RestaurantID) VALUES ('2021-09-07 12:25:32', 'The steak is mundane, somewhat tough and rather bland. The hamburger is overcooked. The tartare is over-chopped. The cocktails are terrible and the water — which we ended up buying — is $9 and does little to quench our thirst.', 2, 4, 2);
 INSERT INTO Reviews (ReviewDate,ReviewDescription,Rating,UserID,RestaurantID) VALUES ('2021-07-12 11:12:42', 'A truly exquisite MingHin Cuisine dining experience. I highly recommend the Hot Mustard Sauce, out of this world.', 4, 2, 2);
 INSERT INTO Reviews (ReviewDate,ReviewDescription,Rating,UserID,RestaurantID) VALUES ('2020-01-02 03:29:55', 'Dim Sum is great for when you want vaguely Chinese flavored food-like items to shove down your throat. Sober me rates this Dim Sum: 4 stars. Drunk me rates it : 6.9 stars. Add the hot sauce and you get 5 stars', 5, 3, 2);
+
+INSERT INTO Reviews (ReviewDate,ReviewDescription,Rating,UserID,RestaurantID) VALUES ('2021-07-14 01:15:42', 'The food was good and the portions are big. It''s a charming restaurant with a nice atmosphere.', 4, 2, 3);
+
+INSERT INTO Reviews (ReviewDate,ReviewDescription,Rating,UserID,RestaurantID) VALUES ('2020-01-20 03:49:55', 'The rice had a funny consistency, the vegies were not that tasty either. The help was nice.', 5, 3, 4);
