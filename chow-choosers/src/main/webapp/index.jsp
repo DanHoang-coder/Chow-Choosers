@@ -25,6 +25,7 @@
     <nav>
 	<ul>
 		<li><a href="index.jsp" class="home"><img src="images/home.png" alt="Home"><span>Home</span></a></li>
+        <li><a href="search">Search</a></li>
 		<li><a href="history.jsp">Our History</a></li>
 		<li><a href="specials.jsp">Specials</a></li>
 		<li><a href="contact.jsp">Contact Us</a></li>
@@ -37,7 +38,6 @@
             <img src="images/diner-view1.jpg" alt="Chow Choosers" width="1334" height="397">
             <div class="pic-description">
                 <h1>Local Restaurant Finder<span>FINDING NEW PLACES TO EAT</span></h1>
-                <span><b>Review/Rating system progress (for testing purpose):</b><br>http://ec2-18-219-122-60.us-east-2.compute.amazonaws.com:8080/chow-choosers/review?restaurantID=1<br>http://ec2-18-219-122-60.us-east-2.compute.amazonaws.com:8080/chow-choosers/review?restaurantID=2<br>http://ec2-18-219-122-60.us-east-2.compute.amazonaws.com:8080/chow-choosers/reviewform.jsp<br><br></span>
                 <span>Finding new places to eat can be an overwhelming task, especially in cities with dense restaurant populations like Omaha. To find new restaurants, people are forced to sift through Google recommendations, Yelp reviews, or other limited services that aren't designed specifically with restaurant selection in mind. Our team's project idea is to create an application that recommends a restaurant to the user based on their current preferences. To input their eating preferences, the user will be able to toggle a series of buttons, including their current location, distance they're willing to travel, the type of food they want to eat (i.e. Mexican, Indian, Chinese), a price range, whether or not the restaurant does delivery, as well as a Surprise Me button that recommends something random. To keep the project reasonable for a small group project, we will populate our database using a cherry-picked list of restaurants in the Omaha area. This application will allow the user to easily browse a list of restaurants based on their selection, eliminating the hectic process of choosing a restaurant without advice.</span>
             </div>
         </div>
@@ -46,6 +46,7 @@
     </main>
     <footer>
         <ul>
+            <li><a href="search" class="blue">Search</a></li>
             <li><a href="history.jsp" class="blue">History</a></li>
             <li><a href="specials.jsp" class="blue">Specials</a></li>
             <li><a href="contact.jsp" class="blue">Contact</a></li>

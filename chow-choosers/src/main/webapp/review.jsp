@@ -28,7 +28,7 @@ if (session == null || session.getAttribute("user") == null) {
 %>
 
 <jsp:include page="tabbarcontroller.jsp">
-    <jsp:param name="page" value="index" />
+    <jsp:param name="page" value="review" />
 </jsp:include>
 
 <!DOCTYPE html>
@@ -69,6 +69,7 @@ if (session == null || session.getAttribute("user") == null) {
     <nav>
 	<ul>
 		<li><a href="index.jsp" class="home"><img src="images/home.png" alt="Home"><span>Home</span></a></li>
+        <li><a href="search">Search</a></li>
 		<li><a href="history.jsp">Our History</a></li>
 		<li><a href="specials.jsp">Specials</a></li>
 		<li><a href="contact.jsp">Contact Us</a></li>
@@ -190,6 +191,7 @@ for(Review review : reviews) {
     </main>
     <footer>
         <ul>
+            <li><a href="search" class="blue">Search</a></li>
             <li><a href="history.jsp" class="blue">History</a></li>
             <li><a href="specials.jsp" class="blue">Specials</a></li>
             <li><a href="contact.jsp" class="blue">Contact</a></li>

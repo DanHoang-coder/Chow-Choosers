@@ -22,6 +22,7 @@
     <nav>
 	<ul>
 		<li><a href="index.jsp" class="home"><img src="images/home.png" alt="Home"><span>Home</span></a></li>
+        <li><a href="search">Search</a></li>
 		<li><a href="history.jsp">Our History</a></li>
 		<li><a href="specials.jsp">Specials</a></li>
 		<li><a href="contact.jsp">Contact Us</a></li>
@@ -64,6 +65,7 @@
     </main>
     <footer>
         <ul>
+            <li><a href="search" class="blue">Search</a></li>
             <li><a href="history.html" class="blue">History</a></li>
             <li><a href="specials.html" class="blue">Specials</a></li>
             <li><a href="contact.html" class="blue">Contact</a></li>

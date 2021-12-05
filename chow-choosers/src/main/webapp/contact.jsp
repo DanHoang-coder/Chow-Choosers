@@ -26,6 +26,7 @@
     <nav>
 	<ul>
 		<li><a href="index.jsp" class="home"><img src="images/home.png" alt="Home"><span>Home</span></a></li>
+        <li><a href="search">Search</a></li>
 		<li><a href="history.jsp">Our History</a></li>
 		<li><a href="specials.jsp">Specials</a></li>
 		<li class="current"><a href="contact.jsp">Contact Us</a></li>
@@ -41,7 +42,7 @@
                 <input type="hidden" name="recipient" value="danhoang@unomaha.edu">
                 <input type="hidden" name="subject" value="INFO1311 Final Assignment">
                 <input type="hidden" name="required" value="firstname,lastname,email,message">
-                <input type="hidden" name="redirect" value="http://ec2-18-219-122-60.us-east-2.compute.amazonaws.com:8080/chow-choosers/return.html">
+                <input type="hidden" name="redirect" value="http://ec2-18-219-122-60.us-east-2.compute.amazonaws.com:8080/chow-choosers/return.jsp">
                 <input type="hidden" name="return_link_title" value="The Downtown Diner">
                 <input type="hidden" name="bgcolor" value="#FFFF99">
                 <input type="hidden" name="title" value="Thank you for taking the time to complete the form.">
@@ -90,6 +91,7 @@
     </main>
     <footer>
         <ul>
+            <li><a href="search" class="blue">Search</a></li>
             <li><a href="history.jsp" class="blue">History</a></li>
             <li><a href="specials.jsp" class="blue">Specials</a></li>
             <li><a href="contact.jsp" class="blue">Contact</a></li>

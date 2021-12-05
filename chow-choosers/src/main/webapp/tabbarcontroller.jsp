@@ -13,10 +13,21 @@
         switch(strPage)
         {
             case "index":
+            case "search":
+            case "review":
+            case "reviewform":
             case "history":
             case "specials":
-            case "contact":
+            case "contact":          	
+            case "return":
                 strBuilder.append("<li><a href=\"setting.jsp\">Setting</a></li>");
+                strBuilder.append("<li><a href=\"logout\">" + firstname + lastname + "Logout</a></li>");    
+                if(usertype.equals("ADMIN")) {
+                    strBuilder.append("<li><a href=\"admin\">Admin</a></li>");
+                }
+                break;
+            case "setting":
+                strBuilder.append("<li class=\"current\"><a href=\"setting.jsp\">Setting</a></li>");
                 strBuilder.append("<li><a href=\"logout\">" + firstname + lastname + "Logout</a></li>");    
                 if(usertype.equals("ADMIN")) {
                     strBuilder.append("<li><a href=\"admin\">Admin</a></li>");
@@ -28,7 +39,7 @@
                 if(usertype.equals("ADMIN")) {
                     strBuilder.append("<li class=\"current\"><a href=\"admin\">Admin</a></li>");
                 }
-                break;    
+                break;
             default:
                 strBuilder.append("");
         }
